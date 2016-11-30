@@ -35,6 +35,7 @@ Fiscal Month = IF([Monthnumber] > 3, [Monthnumber] -3, [Monthnumber] + 9 )
 ```
 
 Set fiscal year for Q4 to previous calendar year to account for Q4 going into the next calendar year.
+
 |Month|Calendar Year|Fiscal Year|
 |---|---|---|
 |January|2017|2016|
