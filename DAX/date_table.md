@@ -24,12 +24,20 @@ Date = ADDCOLUMNS(
 
 
 ## Fiscal Year Starting in April
+Set Quarters from calendar quarters to fiscal quarters
 ```
 Fiscal Quarter = IF([Quarter] = "Q1", "Q4", IF([Quarter] ="Q2", "Q1", IF([Quarter] = "Q3", "Q2", "Q3")))
 ```
+
+Set Month number from calendar to fiscal number.
 ```
 Fiscal Month = IF([Monthnumber] > 3, [Monthnumber] -3, [Monthnumber] + 9 )
 ```
+
+Set fiscal year for Q4 to previous calendar year to account for Q4 going into the next calendar year.
+|Month|Calendar Year|Fiscal Year|
+|---|---|---|
+|January|2017|2016|
 ```
 Fiscal Year = if(MONTH([DATE]) < 4, YEAR([DATE])-1, YEAR([DATE]))
 ```
